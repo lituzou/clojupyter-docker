@@ -9,11 +9,11 @@ ENV CLOJUPYTER_PATH=$HOME/clojupyter-$CLOJUPYTER_VERSION
 
 USER root
 
-# install JDK 8, make, and leiningen
+# install JDK 21, make, and leiningen
 RUN apt update \
-	&& apt-get install -y curl openjdk-8-jdk make leiningen
+	&& apt-get install -y curl openjdk-21-jdk make leiningen
 
-# install curl
+# install clojure
 RUN curl -L -O https://github.com/clojure/brew-install/releases/latest/download/linux-install.sh \
 	&& chmod +x linux-install.sh \
 	&& ./linux-install.sh
